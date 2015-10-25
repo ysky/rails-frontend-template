@@ -84,7 +84,7 @@ run "cp config/application.yml.tmpl config/application.yml"
 run "bundle install --path=vendor/bundle --jobs=4"
 run "bundle package"
 git add: "."
-git commit: "-m '[command] bundle instal --path=vendor/bundle; bundle package'"
+git commit: "-m '[command] bundle install --path=vendor/bundle; bundle package'"
 
 after_bundle do
   run "bundle exec cap install"
