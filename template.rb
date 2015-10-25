@@ -130,7 +130,7 @@ after_bundle do
   git add: "."
   git commit: "-m 'settings for annotate automatically'"
 
-  if yes?("use devise?")
+  if yes?("use devise? [no/yes]")
     append_file "Gemfile", <<-EOG.strip_heredoc
       
       # devise
@@ -141,7 +141,7 @@ after_bundle do
     git add: "."
     git commit: "-m '[gem] devise'"
 
-    if yes?("generate with basic option?")
+    if yes?("generate with basic option? [no/yes]")
       generate "devise:install"
       git add: "."
       git commit: "-m '[command] bundle exec rails g devise:install'"
@@ -175,7 +175,7 @@ after_bundle do
     end
   end
 
-  if yes?("use omniauth?")
+  if yes?("use omniauth? [no/yes]")
     append_file "Gemfile", <<-EOG.strip_heredoc
       
       # omniauth
@@ -187,7 +187,7 @@ after_bundle do
     git commit: "-m '[gem] omniauth-oauth2'"
   end
 
-  if yes?("use bootstrap?")
+  if yes?("use bootstrap?" [no/yes])
     append_file "Gemfile", <<-EOG.strip_heredoc
       
       # bootstrap
@@ -232,7 +232,7 @@ after_bundle do
     git commit: "-m 'add settings for bootstrap'"
   end
 
-  if yes?("use kaminari?")
+  if yes?("use kaminari? [no/yes]")
     append_file "Gemfile", <<-EGF.strip_heredoc
       
       # kaminari
